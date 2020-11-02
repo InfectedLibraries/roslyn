@@ -5,6 +5,8 @@
 
 This is a soft fork of Roslyn. It is primarily serves as a sandbox for testing out ideas for C#. All changes to the language are locked behind feature flags, meaning you can opt into them individually. (In theory anwyay, the way Roslyn is designed means mistakes could break expecations here.)
 
+There is a quick-and-dirty NuGet package [attached to this release](https://github.com/InfectedLibraries/roslyn/releases/tag/2020-11-22). If you just want to see the fork in action, check out [PathogenPlayground/CSharpParameterlessStruct/patholyn-demo](https://github.com/PathogenPlayground/CSharpParameterlessStruct/tree/patholyn-demo).
+
 The intent is that eventually you'll be able to consume this compiler as a NuGet package and eventually we'll automatically keep pace with the Roslyn upstream using CI.
 
 ## Feature Flags

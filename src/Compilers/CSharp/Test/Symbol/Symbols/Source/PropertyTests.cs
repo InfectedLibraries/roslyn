@@ -121,10 +121,7 @@ struct S
     }
 }
 
-").VerifyDiagnostics(
-    // (24,12): error CS0568: Structs cannot contain explicit parameterless constructors
-    //     public S()
-    Diagnostic(ErrorCode.ERR_StructsCantContainDefaultConstructor, "S").WithLocation(24, 12),
+", parseOptions: TestOptions.Regular.WithExperimental(MessageID.IDS_FeatureStructParameterlessConstructors)).VerifyDiagnostics(
     // (9,9): error CS0200: Property or indexer 'C.Ps' cannot be assigned to -- it is read only
     //         Ps = 3;
     Diagnostic(ErrorCode.ERR_AssgReadonlyProp, "Ps").WithArguments("C.Ps").WithLocation(9, 9),

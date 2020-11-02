@@ -10614,7 +10614,7 @@ interface IA
             );
         }
 
-        [Fact]
+        [Fact(Skip = "FeatureStructParameterlessConstructors")]
         public void CS0568ERR_StructsCantContainDefaultConstructor01()
         {
             var text = @"namespace x

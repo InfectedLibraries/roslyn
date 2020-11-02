@@ -702,6 +702,11 @@
         <target state="translated">'{0}' 메서드는 형식 매개 변수 '{1}'의 'struct' 제약 조건을 지정하지만 재정의되었거나 명시적으로 구현된 '{3}' 메서드의 해당 형식 매개 변수 '{2}'이(가) null을 허용하지 않는 값 형식이 아닙니다.</target>
         <note />
       </trans-unit>
+      <trans-unit id="ERR_ParameterlessStructCtorsMustBePublic">
+        <source>Parameterless instance constructors in structs must be public</source>
+        <target state="new">Parameterless instance constructors in structs must be public</target>
+        <note />
+      </trans-unit>
       <trans-unit id="ERR_PartialMethodAccessibilityDifference">
         <source>Both partial method declarations must have identical accessibility modifiers.</source>
         <target state="new">Both partial method declarations must have identical accessibility modifiers.</target>
@@ -950,6 +955,11 @@
       <trans-unit id="IDS_FeatureImplicitObjectCreation">
         <source>target-typed object creation</source>
         <target state="new">target-typed object creation</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="IDS_FeatureStructParameterlessConstructors">
+        <source>struct instance parameterless constructors</source>
+        <target state="new">struct instance parameterless constructors</target>
         <note />
       </trans-unit>
       <trans-unit id="WRN_AnalyzerReferencesFramework">

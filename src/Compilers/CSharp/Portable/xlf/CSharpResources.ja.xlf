@@ -702,6 +702,11 @@
         <target state="translated">メソッド '{0}' は、型パラメーター '{1}' に対して 'struct' 制約を指定していますが、オーバーライドされた、または明示的に実装されたメソッド '{3}' の対応する型パラメーター '{2}' は NULL 非許容の値型ではありません。</target>
         <note />
       </trans-unit>
+      <trans-unit id="ERR_ParameterlessStructCtorsMustBePublic">
+        <source>Parameterless instance constructors in structs must be public</source>
+        <target state="new">Parameterless instance constructors in structs must be public</target>
+        <note />
+      </trans-unit>
       <trans-unit id="ERR_PartialMethodAccessibilityDifference">
         <source>Both partial method declarations must have identical accessibility modifiers.</source>
         <target state="new">Both partial method declarations must have identical accessibility modifiers.</target>
@@ -950,6 +955,11 @@
       <trans-unit id="IDS_FeatureImplicitObjectCreation">
         <source>target-typed object creation</source>
         <target state="new">target-typed object creation</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="IDS_FeatureStructParameterlessConstructors">
+        <source>struct instance parameterless constructors</source>
+        <target state="new">struct instance parameterless constructors</target>
         <note />
       </trans-unit>
       <trans-unit id="WRN_AnalyzerReferencesFramework">

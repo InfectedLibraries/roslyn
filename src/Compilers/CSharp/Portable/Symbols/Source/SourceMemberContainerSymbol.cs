@@ -2990,9 +2990,19 @@ namespace Microsoft.CodeAnalysis.CSharp.Symbols
                         {
                             diagnostics.Add(ErrorCode.ERR_EnumsCantContainDefaultConstructor, m.Locations[0]);
                         }
+                        else if (m.DeclaredAccessibility != Accessibility.Public)
+                        {
+                            diagnostics.Add(ErrorCode.ERR_ParameterlessStructCtorsMustBePublic, m.Locations[0]);
+                        }
                         else
                         {
-                            diagnostics.Add(ErrorCode.ERR_StructsCantContainDefaultConstructor, m.Locations[0]);
+                            SyntaxTree? sourceTree = m.Locations[0].SourceTree;
+
+                            // Not sure how to handle this situation, old code didn't check at all.
+                            if (sourceTree is null)
+                            { throw new InvalidOperationException("Struct default constructor does not have a source tree."); }
+
+                            Binder.CheckFeatureAvailability(sourceTree, MessageID.IDS_FeatureStructParameterlessConstructors, diagnostics, m.Locations[0]);
                         }
                     }
                 }

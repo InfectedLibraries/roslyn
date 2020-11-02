@@ -1928,6 +1928,12 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         #endregion diagnostics introduced for C# 9.0
 
+        #region diagnostics introduced for C# Pathogen
+
+        ERR_ParameterlessStructCtorsMustBePublic = 32260001,
+
+        #endregion diagnostics introduced for C# Pathogen
+
         // Note: you will need to re-generate compiler code after adding warnings (eng\generate-compiler-code.cmd)
     }
 }

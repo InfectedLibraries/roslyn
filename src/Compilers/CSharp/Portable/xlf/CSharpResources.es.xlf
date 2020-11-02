@@ -702,6 +702,11 @@
         <target state="translated">El método "{0}" especifica una restricción "struct" para el parámetro de tipo "{1}", pero el parámetro de tipo correspondiente "{2}" de los métodos invalidados o implementados explícitamente "{3}" no es un tipo de valor que acepta valores NULL.</target>
         <note />
       </trans-unit>
+      <trans-unit id="ERR_ParameterlessStructCtorsMustBePublic">
+        <source>Parameterless instance constructors in structs must be public</source>
+        <target state="new">Parameterless instance constructors in structs must be public</target>
+        <note />
+      </trans-unit>
       <trans-unit id="ERR_PartialMethodAccessibilityDifference">
         <source>Both partial method declarations must have identical accessibility modifiers.</source>
         <target state="new">Both partial method declarations must have identical accessibility modifiers.</target>
@@ -950,6 +955,11 @@
       <trans-unit id="IDS_FeatureImplicitObjectCreation">
         <source>target-typed object creation</source>
         <target state="new">target-typed object creation</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="IDS_FeatureStructParameterlessConstructors">
+        <source>struct instance parameterless constructors</source>
+        <target state="new">struct instance parameterless constructors</target>
         <note />
       </trans-unit>
       <trans-unit id="WRN_AnalyzerReferencesFramework">

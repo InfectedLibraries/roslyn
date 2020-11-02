@@ -1,3 +1,50 @@
+# Patholyn - A soft fork of the .NET Compiler Platform ("Roslyn")
+
+[![MIT Licensed](https://img.shields.io/github/license/infectedlibraries/roslyn?style=flat-square)](LICENSE.txt)
+[![Sponsor](https://img.shields.io/badge/sponsor-%E2%9D%A4-lightgrey?logo=github&style=flat-square)](https://github.com/sponsors/PathogenDavid)
+
+This is a soft fork of Roslyn. It is primarily serves as a sandbox for testing out ideas for C#. All changes to the language are locked behind feature flags, meaning you can opt into them individually. (In theory anwyay, the way Roslyn is designed means mistakes could break expecations here.)
+
+The intent is that eventually you'll be able to consume this compiler as a NuGet package and eventually we'll automatically keep pace with the Roslyn upstream using CI.
+
+## Feature Flags
+
+### `StructParameterlessConstructors`
+
+This feature is similar to [dotnet/csharplang#99](https://github.com/dotnet/csharplang/issues/99)
+
+This feature flag enables parameterless instance constructors on structs, for example:
+
+```csharp
+public struct MyStruct
+{
+    private string Message;
+
+    public MyStruct()
+        => Message = "Initialized from parameterless constructor.";
+
+    public MyStruct(string message)
+        => Message = message;
+
+    public override string ToString()
+        => Message ?? "Defaulted struct.";
+}
+```
+
+The implementation of this feature is based on the cut C# 6 feature that [was removed](https://github.com/dotnet/roslyn/pull/1106) before Roslyn 1.0 was released.
+
+(Note that the Visual Basic implementation of this feature was not restored.)
+
+[Roslyn actually supports calling parameterless constructors on structs when they exist](https://github.com/PathogenPlayground/CSharpParameterlessStruct). So using this feature on public API does not make it incompatible with vanilla Roslyn. Parameterless constructors will be called as expected.
+
+# Roslyn Readme
+
+Past this point is the original Roslyn readme, unmodified.
+
+<!-- Don't modify the original readme! Doing so makes it harder to merge changes. -->
+
+----------------------------------
+
 ## Welcome to the .NET Compiler Platform ("Roslyn")
 
 [![Join the chat at https://gitter.im/dotnet/roslyn](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dotnet/roslyn?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Chat on Discord](https://discordapp.com/api/guilds/143867839282020352/widget.png)](http://aka.ms/discord-csharp-roslyn)

@@ -214,6 +214,10 @@ namespace Microsoft.CodeAnalysis.CSharp
         IDS_Parameter = MessageBase + 12789,
         IDS_Return = MessageBase + 12790,
         IDS_FeatureVarianceSafetyForStaticInterfaceMembers = MessageBase + 12791,
+
+        // Below here are Pathogen C# features
+        PathogenMessageBase = MessageBase + 322600,
+        IDS_FeatureStructParameterlessConstructors = PathogenMessageBase + 1
     }
 
     // Message IDs may refer to strings that need to be localized.
@@ -258,6 +262,8 @@ namespace Microsoft.CodeAnalysis.CSharp
             // Check for current experimental features, if any, in the current branch.
             switch (feature)
             {
+                case MessageID.IDS_FeatureStructParameterlessConstructors:
+                    return "StructParameterlessConstructors";
                 default:
                     return null;
             }
